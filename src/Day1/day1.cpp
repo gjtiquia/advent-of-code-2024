@@ -33,10 +33,10 @@ std::string day1Part1(std::string filename)
     std::sort(list1.begin(), list1.end());
     std::sort(list2.begin(), list2.end());
 
-    int distanceSum{0};
-    for (uint i{0}; i < list1.size(); i++)
+    auto distanceSum{0};
+    for (auto i{0u}; i < list1.size(); i++)
     {
-        int distance = std::abs(list1[i] - list2[i]);
+        auto distance = std::abs(list1[i] - list2[i]);
         // std::cout << std::to_string(list1[i]) + " " + std::to_string(list2[i]) + " : " + std::to_string(distance) + "\n";
         distanceSum += distance;
     }
@@ -64,13 +64,13 @@ std::string day1Part2(std::string filename)
         list2.push_back(std::stoi(words[1]));
     }
 
-    int totalSimilarityScore{0};
-    for (uint i{0}; i < list1.size(); i++)
+    auto totalSimilarityScore{0};
+    for (auto i{0u}; i < list1.size(); i++)
     {
         auto targetID = list1[i];
 
-        int count{0};
-        for (uint j{0}; j < list2.size(); j++)
+        auto count{0};
+        for (auto j{0u}; j < list2.size(); j++)
         {
             auto id = list2[j];
             if (id == targetID)

@@ -13,7 +13,7 @@ std::string day2Part1(std::string filename)
         return "ERROR";
     }
 
-    int safeReportCount{0};
+    auto safeReportCount{0};
 
     std::string line{};
     while (std::getline(inputFileStream, line))
@@ -27,7 +27,7 @@ std::string day2Part1(std::string filename)
         auto secondLevel{levelList[1]};
         auto isFirsLevelIncreasing{firstLevel < secondLevel};
 
-        for (uint i{1}; i < levelList.size(); i++)
+        for (auto i{1u}; i < levelList.size(); i++)
         {
             auto previousLevel{levelList[i - 1]};
             auto currentLevel{levelList[i]};
