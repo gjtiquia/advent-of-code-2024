@@ -1,4 +1,5 @@
 #include "day2.h"
+#include "utils.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -12,7 +13,45 @@ std::string day2Part1(std::string filename)
         return "ERROR";
     }
 
-    return "TODO";
+    int safeReportCount{0};
+
+    std::string line{};
+    while (std::getline(inputFileStream, line))
+    {
+        auto isReportSafe{true};
+
+        // We assume levelList.size() > 1
+        auto levelList = splitLineToIntListBySpaces(line);
+
+        auto firstLevel{levelList[0]};
+        auto secondLevel{levelList[1]};
+        auto isFirsLevelIncreasing{firstLevel < secondLevel};
+
+        for (uint i{1}; i < levelList.size(); i++)
+        {
+            auto previousLevel{levelList[i - 1]};
+            auto currentLevel{levelList[i]};
+
+            auto isPreviousLevelIncreasing{previousLevel < currentLevel};
+            if (isPreviousLevelIncreasing != isFirsLevelIncreasing)
+            {
+                isReportSafe = false;
+                break;
+            }
+
+            auto difference{std::abs(previousLevel - currentLevel)};
+            if (difference < 1 || difference > 3)
+            {
+                isReportSafe = false;
+                break;
+            }
+        }
+
+        if (isReportSafe)
+            safeReportCount++;
+    }
+
+    return std::to_string(safeReportCount);
 }
 
 std::string day2Part2(std::string filename)

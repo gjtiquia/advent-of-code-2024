@@ -15,3 +15,15 @@ std::vector<std::string> splitLineToWordsBySpaces(std::string line)
 
     return words;
 }
+
+std::vector<int> splitLineToIntListBySpaces(std::string line)
+{
+    std::vector<int> intList{};
+
+    std::stringstream stringstream{line};
+    std::string word{};
+    while (stringstream >> word)
+        intList.push_back(std::stoi(word));
+
+    return intList;
+}

@@ -24,9 +24,9 @@ std::string day1Part1(std::string filename)
     std::string line{};
     while (std::getline(inputFileStream, line))
     {
-        auto words = splitLineToWordsBySpaces(line);
-        list1.push_back(std::stoi(words[0]));
-        list2.push_back(std::stoi(words[1]));
+        auto words = splitLineToIntListBySpaces(line);
+        list1.push_back(words[0]);
+        list2.push_back(words[1]);
     }
 
     // By default, sorts in ascending order
