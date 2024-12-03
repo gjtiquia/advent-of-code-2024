@@ -2,4 +2,4 @@
 
 #include <string>
 
-int day1(std::string filename);
+std::string day1Part1(std::string filename);

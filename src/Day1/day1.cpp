@@ -8,13 +8,13 @@
 #include <bits/stdc++.h> // std::sort
 #include <cmath>         // std::abs
 
-int day1(std::string filename)
+std::string day1Part1(std::string filename)
 {
     std::ifstream inputFileStream{filename};
     if (!inputFileStream)
     {
         std::cerr << filename + " cannot not be opened for reading!\n";
-        return 1;
+        return "ERROR";
     }
 
     std::vector<int> list1{};
@@ -40,6 +40,5 @@ int day1(std::string filename)
         distanceSum += distance;
     }
 
-    std::cout << std::to_string(distanceSum) + "\n";
-    return 0;
+    return std::to_string(distanceSum);
 }
