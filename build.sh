@@ -9,7 +9,7 @@ echo "Build: Compiling main.cpp into executable 'main'..."
 # The compiler will halt compilation if it finds any warnings
 # (source: https://www.learncpp.com/cpp-tutorial/configuring-your-compiler-warning-and-error-levels/)
 
-g++ src/**.cpp src/**/*.cpp -o main -I src -I src/Day* -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror
+g++ src/**.cpp src/**/*.cpp -I src -I src/Day1 -I src/Day2 -o main -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror
 
 lastExitCode=$?
 if [ $lastExitCode != 0 ]; then
