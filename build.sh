@@ -14,4 +14,10 @@ echo "Build: Compiling main.cpp into executable 'main'..."
 # (source: https://www.learncpp.com/cpp-tutorial/configuring-your-compiler-warning-and-error-levels/)
 g++ -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror main.cpp -o main
 
-echo "Build Success!"
+lastExitCode=$?
+if [ $lastExitCode != 0 ]; then
+    echo "Build: Failed! Exit Code: ${lastExitCode}" 
+    exit $lastExitCode
+fi
+
+echo "Build: Success!"

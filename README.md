@@ -6,5 +6,4 @@ This repository is my attempt at the Advent of Code 2024 with C++
 
 ## Commands
 
-`bash build.sh` : Compile `main.cpp` into an executable called `main`
-`./main` : Run `main` executable
+`bash run.sh` : Compile `main.cpp` into an executable called `main` and runs it
