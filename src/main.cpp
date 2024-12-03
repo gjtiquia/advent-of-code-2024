@@ -1,4 +1,4 @@
-#include "./Day1/day1.h" // TODO : use include directories
+#include "day1.h"
 
 #include <iostream>
 
