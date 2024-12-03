@@ -65,14 +65,11 @@ std::string day1Part2(std::string filename)
     }
 
     auto totalSimilarityScore{0};
-    for (auto i{0u}; i < list1.size(); i++)
+    for (auto targetID : list1)
     {
-        auto targetID = list1[i];
-
         auto count{0};
-        for (auto j{0u}; j < list2.size(); j++)
+        for (auto id : list2)
         {
-            auto id = list2[j];
             if (id == targetID)
                 count++;
         }
