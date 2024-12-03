@@ -1,9 +1,31 @@
-#include <iostream> // Required to use cout
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <vector>
 
-// Must be called main() in order to run
 int main()
 {
-    // Some may prefer "using namespace std" instead of typing "std::" all the time
-    std::cout << "Hello World!\n";
-    return 0; // 0 = no error, 1 = have error
+    const std::string FILENAME = "./Day1/input.txt";
+
+    std::ifstream inputFileStream{FILENAME};
+    if (!inputFileStream)
+    {
+        std::cerr << FILENAME + " cannot not be opened for reading!\n";
+        return 1;
+    }
+
+    std::vector<std::string> lines{};
+    std::string line{};
+    while (std::getline(inputFileStream, line))
+    {
+        lines.push_back(line);
+    }
+
+    // TODO : just for testing vectors, should optimize lol, could do per line operation on the while loop above
+    for (u_long i{0}; i < lines.size(); i++)
+    {
+        std::cout << std::to_string(i) + ": " + lines[i] + "\n";
+    }
+
+    return 0;
 }
