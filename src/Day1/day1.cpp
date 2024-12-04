@@ -6,7 +6,7 @@
 #include <sstream>       // std::stringstream
 #include <string>        // std::string
 #include <vector>        // std::vector
-#include <bits/stdc++.h> // std::sort
+#include <algorithm> // std::sort
 #include <cmath>         // std::abs
 
 std::string day1Part1(std::string filename)
