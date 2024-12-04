@@ -1,13 +1,13 @@
 #include "day1.h"
 #include "utils.h"
 
-#include <fstream>       // std::ifstream
-#include <iostream>      // std::cout
-#include <sstream>       // std::stringstream
-#include <string>        // std::string
-#include <vector>        // std::vector
+#include <fstream>   // std::ifstream
+#include <iostream>  // std::cout
+#include <sstream>   // std::stringstream
+#include <string>    // std::string
+#include <vector>    // std::vector
 #include <algorithm> // std::sort
-#include <cmath>         // std::abs
+#include <cmath>     // std::abs
 
 std::string day1Part1(std::string filename)
 {
