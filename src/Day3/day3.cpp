@@ -72,5 +72,75 @@ std::string day3Part2(std::string filename)
         return "ERROR";
     }
 
-    return "TODO";
+    auto productSum{0};
+    auto isEnabled{true};
+
+    std::string line{};
+    while (std::getline(inputFileStream, line))
+    {
+        auto searchIndex{0lu};
+        while (true)
+        {
+            auto startingIndex = line.find("mul(", searchIndex);
+            if (startingIndex == std::string::npos)
+                break;
+
+            if (isEnabled)
+            {
+                auto dontIndex = line.find("don't()", searchIndex);
+                if (dontIndex != std::string::npos && dontIndex < startingIndex)
+                {
+                    isEnabled = false;
+                    searchIndex = dontIndex + 1;
+                    continue;
+                }
+            }
+            else
+            {
+                auto doIndex = line.find("do()", searchIndex);
+                if (doIndex == std::string::npos)
+                    break;
+
+                if (doIndex < startingIndex)
+                {
+                    isEnabled = true;
+                }
+                else
+                {
+                    searchIndex = doIndex;
+                    continue;
+                }
+            }
+
+            searchIndex = startingIndex + 1;
+
+            auto openingBracketIndex = line.find("(", startingIndex);
+
+            auto commaIndex = line.find(",", startingIndex);
+            if (commaIndex == std::string::npos)
+                continue;
+
+            auto firstDigitStartIndex = openingBracketIndex + 1;
+            auto firstDigitLength = commaIndex - firstDigitStartIndex;
+            if (firstDigitLength < 1 || firstDigitLength > 3)
+                continue;
+
+            auto closingBracketIndex = line.find(")", startingIndex);
+            if (closingBracketIndex == std::string::npos)
+                continue;
+
+            auto secondDigitStartIndex = commaIndex + 1;
+            auto secondDigitLength = closingBracketIndex - secondDigitStartIndex;
+            if (secondDigitLength < 1 || secondDigitLength > 3)
+                continue;
+
+            auto firstDigit = std::stoi(line.substr(firstDigitStartIndex, firstDigitLength));
+            auto secondDigit = std::stoi(line.substr(secondDigitStartIndex, secondDigitLength));
+            auto product = firstDigit * secondDigit;
+
+            productSum += product;
+        }
+    }
+
+    return std::to_string(productSum);
 }
