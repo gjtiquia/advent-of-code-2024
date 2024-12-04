@@ -5,3 +5,5 @@
 
 std::vector<std::string> splitLineToWordsBySpaces(std::string line);
 std::vector<int> splitLineToIntListBySpaces(std::string line);
+
+void debugLog(std::string message);

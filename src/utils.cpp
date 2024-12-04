@@ -1,8 +1,9 @@
 #include "utils.h"
 
-#include <sstream> // std::stringstream
-#include <string>  // std::string
-#include <vector>  // std::vector
+#include <iostream> // std::cout
+#include <sstream>  // std::stringstream
+#include <string>   // std::string
+#include <vector>   // std::vector
 
 std::vector<std::string> splitLineToWordsBySpaces(std::string line)
 {
@@ -26,4 +27,9 @@ std::vector<int> splitLineToIntListBySpaces(std::string line)
         intList.push_back(std::stoi(word));
 
     return intList;
+}
+
+void debugLog(std::string message)
+{
+    std::cout << message + "\n";
 }
