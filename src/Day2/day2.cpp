@@ -1,5 +1,9 @@
 #include "day2.h"
 #include "utils.h"
+
+#define FMT_HEADER_ONLY
+#include <fmt/core.h>
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -9,7 +13,7 @@ std::string day2Part1(std::string filename)
     std::ifstream inputFileStream{filename};
     if (!inputFileStream)
     {
-        std::cerr << filename + " cannot not be opened for reading!\n";
+        fmt::print(stderr, "{} cannot be opened for reading!\n", filename);
         return "ERROR";
     }
 
@@ -31,7 +35,7 @@ std::string day2Part2(std::string filename)
     std::ifstream inputFileStream{filename};
     if (!inputFileStream)
     {
-        std::cerr << filename + " cannot not be opened for reading!\n";
+        fmt::print(stderr, "{} cannot be opened for reading!\n", filename);
         return "ERROR";
     }
 

@@ -1,8 +1,10 @@
 #include "day1.h"
 #include "utils.h"
 
+#define FMT_HEADER_ONLY
+#include <fmt/core.h>
+
 #include <fstream>   // std::ifstream
-#include <iostream>  // std::cout
 #include <sstream>   // std::stringstream
 #include <string>    // std::string
 #include <vector>    // std::vector
@@ -14,7 +16,7 @@ std::string day1Part1(std::string filename)
     std::ifstream inputFileStream{filename};
     if (!inputFileStream)
     {
-        std::cerr << filename + " cannot not be opened for reading!\n";
+        fmt::print(stderr, "{} cannot be opened for reading!\n", filename);
         return "ERROR";
     }
 
@@ -37,7 +39,6 @@ std::string day1Part1(std::string filename)
     for (auto i{0u}; i < list1.size(); i++)
     {
         auto distance = std::abs(list1[i] - list2[i]);
-        // std::cout << std::to_string(list1[i]) + " " + std::to_string(list2[i]) + " : " + std::to_string(distance) + "\n";
         distanceSum += distance;
     }
 
@@ -49,7 +50,7 @@ std::string day1Part2(std::string filename)
     std::ifstream inputFileStream{filename};
     if (!inputFileStream)
     {
-        std::cerr << filename + " cannot not be opened for reading!\n";
+        fmt::print(stderr, "{} cannot be opened for reading!\n", filename);
         return "ERROR";
     }
 

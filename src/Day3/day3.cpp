@@ -1,8 +1,10 @@
 #include "day3.h"
 #include "utils.h"
 
-#include <fstream>   // std::ifstream
-#include <iostream>  // std::cout
+#define FMT_HEADER_ONLY
+#include <fmt/core.h>
+
+#include <fstream>   // std::ifstreams
 #include <sstream>   // std::stringstream
 #include <string>    // std::string
 #include <vector>    // std::vector
@@ -14,7 +16,7 @@ std::string day3Part1(std::string filename)
     std::ifstream inputFileStream{filename};
     if (!inputFileStream)
     {
-        std::cerr << filename + " cannot not be opened for reading!\n";
+        fmt::print(stderr, "{} cannot be opened for reading!\n", filename);
         return "ERROR";
     }
 
@@ -68,7 +70,7 @@ std::string day3Part2(std::string filename)
     std::ifstream inputFileStream{filename};
     if (!inputFileStream)
     {
-        std::cerr << filename + " cannot not be opened for reading!\n";
+        fmt::print(stderr, "{} cannot be opened for reading!\n", filename);
         return "ERROR";
     }
 
