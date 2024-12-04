@@ -17,4 +17,4 @@ if [ $lastExitCode != 0 ]; then
     exit $lastExitCode
 fi
 
-echo "Build: Success!"
+echo "Build: Success! Exit Code: ${lastExitCode}"
