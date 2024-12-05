@@ -11,7 +11,7 @@ echo "Build: Compiling main.cpp into executable 'main'..."
 
 g++ \
     src/**.cpp src/**/*.cpp \
-    -I src -I src/Day1 -I src/Day2 -I src/Day3 \
+    -I src -I src/Day1 -I src/Day2 -I src/Day3 -I src/Day4 \
     -I lib/fmt/include \
     -o main \
     
