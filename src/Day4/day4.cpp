@@ -20,6 +20,20 @@ std::string day4Part1(std::string filename)
         return "ERROR";
     }
 
+    std::vector<std::vector<char>> charMatrix{};
+
+    std::string line{};
+    while (std::getline(inputFileStream, line))
+    {
+        std::vector<char> row{};
+
+        for (auto character : line)
+            row.push_back(character);
+
+        charMatrix.push_back(row);
+    }
+
+    fmt::print("Matrix initialized! x: {}, y: {}\n", charMatrix[0].size(), charMatrix.size());
     return "TODO";
 }
 
