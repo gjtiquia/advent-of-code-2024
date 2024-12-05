@@ -14,6 +14,10 @@ g++ \
     -I src -I src/Day1 -I src/Day2 -I src/Day3 \
     -I lib/fmt/include \
     -o main \
+    
+    # Uncomment this for verbose build output
+    # -v \
+    
     # Commented bcs fmt library throws a lot of errors (which are treated as errors here😂)
     # -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion \
     # -Werror
